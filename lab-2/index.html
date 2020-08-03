@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lab - Multimedia Programming 2563 ITKMITL</title>
-	<link rel=stylesheet href="../src/reset.css">
-	<link rel=stylesheet href="lab.css">
+	<title>The Members - ITKMITL Multimedia Programming 2563</title>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="lab.css">
 </head>
-<body class="paper">
+<body>
 	<div id="app">
-		<input type="number">
-		<div class="space"></div>
-		<h4>{{number}} x 1 = x</h4>
-		<h4>{{number}} x 2 = x</h4>
-		<h4>{{number}} x 3 = x</h4>
-		<h4>{{number}} x 4 = x</h4>
-		<h4>{{number}} x 5 = x</h4>
-		<h4>{{number}} x 6 = x</h4>
-		<h4>{{number}} x 7 = x</h4>
-		<h4>{{number}} x 8 = x</h4>
-		<h4>{{number}} x 9 = x</h4>
-		<h4>{{number}} x 10 = x</h4>
-		<h4>{{number}} x 11 = x</h4>
-		<h4>{{number}} x 12 = x</h4>
+		
 	</div>
+	
 
 	<script>
+		fetch('https://jsonplaceholder.typicode.com/users')
+		.then(response => response.json())
+		.then(json => {console.log(json)})
 		let app = new Vue({
 			el: '#app',
 			data: {
-				number: 2
+				users :[],
+				person:{
+					id:0,
+					name:'..loading',
+					username:'..loading',
+					email:'..loading',
+					website:'..loading',
+					company:{
+						name : '..loading',
+					}
+				}	
 			}
 		})
+
 	</script>
 </body>
 </html>
