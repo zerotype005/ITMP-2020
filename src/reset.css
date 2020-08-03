@@ -1,8 +1,20 @@
 html,body{
 	font-family: sans-serif;
 	margin: 0;
+	font-size: 16px;
 }
 h1,h2,h3,h4,h5,h6{
 	margin: 0;
 	line-height: 1.5;
+}
+body.paper{
+	box-sizing: border-box;
+	padding: 1rem;
+}
+input{
+	font-size: 1em;
+}
+.space{
+	display: block;
+	height: .5em;
 }
