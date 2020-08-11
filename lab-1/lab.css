@@ -1,6 +1,20 @@
-.row{
-	box-shadow: 0px 2px 12px #0001;
-	padding: .2em .4em;
-	border-radius: 4px;
-	margin-bottom: .5em;
+:root{
+	--ci1:#000;
+	--ci2:#666;
+	--ci3:#888;
+	--link:var(--ci1);
+	--link-hover:var(--ci2);
+	--btn-bg:var(--ci1);
+	--btn-bg-hover:var(--ci2);
+	--nav-link:var(--ci1);
+	--nav-hover:var(--ci2);
+	--bg-color:#edf2f7;
+	--text-color:#333;
+	--box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04)!important;
+	--txt-font:-apple-system, BlinkMacSystemFont, sans-serif;
+	--pmr-font:"Sukhumvit Set",-apple-system, BlinkMacSystemFont,"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.round{
+	border-radius: 10px;
 }
