@@ -9,9 +9,11 @@
 <body class="paper">
 	<div id="app">
 		<input type="number" v-model="n">
+		<input type="number" v-model="row">
 		<div class="space"></div>
-		<h3>สูตรคูณแม่ {{n}}</h3>
-			<h4 v-for="i in 12"
+		<h2>สูตรคูณแม่ {{n}}</h2>
+		<h5>กลับไปที่แม่ -> {{before_n}}</h5>
+			<h4 v-for="i in r"
 				>{{n}} x {{i}} = {{x(i)}}</h4>
 		
 
@@ -22,12 +24,48 @@
 			el: '#app',
 			data: {
 				n: 2,
+				before_n: 1,
+				row: 12
 			},
 			methods: {
 				x: function(row){
 					return this.n*row
 				}
+			},	
+			computed: {
+				r: function(){
+					return parseInt(this.row)
+				},
+				x2: function(){
+					return this.n*2
+				},
+				x3: function(){
+					return this.n*3
+				},
+				x4: function(){
+					return this.n*4
+				},
+				x5: function(){
+					return this.n*5
+				},
+				x6: function(){
+					return this.n*6
+				},
+				x7: function(){
+					return this.n*7
+				},
+				x8: function(){
+					return this.n*8
+				},
+				x9: function(){
+					return this.n*9
+				}
 			},
+			watch: {
+				n: function(a,b){
+					this.before_n = b
+				}
+			}
 		})
 	</script>
 </body>
