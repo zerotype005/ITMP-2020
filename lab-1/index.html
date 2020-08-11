@@ -14,7 +14,8 @@
 		<h2>สูตรคูณแม่ {{n}}</h2>
 		<h5>กลับไปที่แม่ -> {{before_n}}</h5>
 			<h4 v-for="i in r"
-				>{{n}} x {{i}} = {{x(i)}}</h4>
+				>{{n}} x {{i}} = {{multiply(i)}}</h4>
+			<h3 class="total"> ผลรวม {{sum(row)}}</h3>
 		
 
 	</div>
@@ -28,9 +29,17 @@
 				row: 12
 			},
 			methods: {
-				x: function(row){
+				multiply: function(row){
 					return this.n*row
+				},
+				sum: function(row){
+					let sum = 0
+					for(let i=1;i<=row;i++){
+						sum += this.n*i
+					}
+					return sum;
 				}
+				
 			},	
 			computed: {
 				r: function(){
