@@ -10,7 +10,13 @@
 
 <body>
 	<div id="app">
-		<h2 v-for="h in heroes">{{h.name}}</h2>
+		<center><h1>Dota 2</h1></center>
+		<h2>About</h2>
+		<h3>hero name: {{hero.localized_name}}</h3>
+		<h3>primary attraction: {{hero.primary_attr}}</h3>
+		<h3>attack type: {{hero.attack_type}}</h3>
+		<h2>heroes</h2>
+		<h3 v-for="h in heroes">{{h.localized_name}}</h3>
 
 	</div>
 
@@ -21,31 +27,31 @@
 			.then(json => {
 				console.log(json)
 				app.heroes = json
+				app.hero = json[0]
 			})
 
 
 		let app = new Vue({
 			el: '#app',
 			data: {
-				heroes: [{ 
+				heroes: [{			//users
 					"id": 1,
-					"name": "_______", 
-					"localized_name": "________", 
-					"primary_attr": "________"
-					, "attack_type": "________"
-					, "roles": ["Carry", "Escape", "Nuker"],
-					 "legs": 2 
-					}],
-				person: {
-					id: 0,
-					name: '..loading',
-					username: '..loading',
-					email: '..loading',
-					website: '..loading',
-					company: {
-						name: '..loading',
-					}
-				}
+					"name": "_______",
+					"localized_name": "________",
+					"primary_attr": "________",
+					"attack_type": "________",
+					"roles": ["Carry", "Escape", "Nuker"],
+					"legs": 2
+				}],
+				hero: [{				//person
+					"id": 1,
+					"name": "_______",
+					"localized_name": "________",
+					"primary_attr": "________",
+					"attack_type": "________",
+					"roles": ["Carry", "Escape", "Nuker"],
+					"legs": 2
+				}]
 			}
 		})
 
