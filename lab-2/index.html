@@ -10,7 +10,8 @@
 
 <body>
 	<div id="app">
-		<h2 v-for="h in heroes">{{h}}</h2>
+		<h2 v-for="h in heroes">{{h.name}}</h2>
+
 	</div>
 
 
@@ -19,7 +20,7 @@
 			.then(response => response.json())
 			.then(json => {
 				console.log(json)
-				app.heroes = jsons
+				app.heroes = json
 			})
 
 
@@ -28,22 +29,13 @@
 			data: {
 				heroes: [{ 
 					"id": 1,
-					"name": "npc_dota_hero_antimage", 
-					"localized_name": "Anti-Mage", 
-					"primary_attr": "agi"
-					, "attack_type": "Melee"
+					"name": "_______", 
+					"localized_name": "________", 
+					"primary_attr": "________"
+					, "attack_type": "________"
 					, "roles": ["Carry", "Escape", "Nuker"],
 					 "legs": 2 
-					},
-					{
-						"id":2,
-						"name":"npc_dota_hero_axe",
-						"localized_name":"Axe",
-						"primary_attr":"str",
-						"attack_type":"Melee",
-						"roles":["Initiator","Durable","Disabler","Jungler"],
-						"legs":2}
-				],
+					}],
 				person: {
 					id: 0,
 					name: '..loading',
