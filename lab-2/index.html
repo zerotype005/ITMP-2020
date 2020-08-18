@@ -10,14 +10,19 @@
 
 <body>
 	<div id="app">
-		<center><h1>Dota 2</h1></center>
-		<h2>About</h2>
-		<h3>hero name: {{hero.localized_name}}</h3>
-		<h3>primary attraction: {{hero.primary_attr}}</h3>
-		<h3>attack type: {{hero.attack_type}}</h3>
-		<h2>heroes</h2>
-		<h3 v-for="h in heroes">{{h.localized_name}}</h3>
-
+		<center>
+			<h1>Dota 2</h1>
+		</center>
+		<div id="About">
+			<h2>About</h2>
+			<h3>hero name: {{hero.localized_name}}</h3>
+			<h3>primary attraction: {{hero.primary_attr}}</h3>
+			<h3>attack type: {{hero.attack_type}}</h3>
+		</div>
+		<div id="heroes">
+			<h2>heroes</h2>
+			<h3 id="showName" v-for="h in heroes" :data-id="h.id" onclick="viewBio(this)">{{h.localized_name}}</h3>
+		</div>
 	</div>
 
 
@@ -54,6 +59,14 @@
 				}]
 			}
 		})
+
+		var showName = document.getElementById("showName").value
+
+		function viewBio(showName) {
+			let id = showName.dataset.id
+			app.hero = app.heroes[id - 1]
+			console.log(id)
+		}
 
 	</script>
 </body>
