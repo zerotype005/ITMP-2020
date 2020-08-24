@@ -13,11 +13,31 @@
     background-color: rgb(255, 2, 2);
     margin: auto;
     width: 50%;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 10px;
     padding-left: 15px;
 }
 
 body{
     background-color: black;
+}
+
+/* unvisited link */
+#showName:link {
+    color: red;
+}
+  
+  /* visited link */
+#showName:visited {
+    color: green;
+}
+  
+  /* mouse over link */
+#showName:hover {
+    color: rgb(255, 255, 255);
+}
+  
+/* selected link */
+#showName:active {
+    color: blue;
 }

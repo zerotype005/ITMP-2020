@@ -14,13 +14,13 @@
 			<img width="180" height="200" src="https://i.pinimg.com/564x/2d/cd/80/2dcd80c6f5a21a437313adde93b373d8.jpg" alt="logo">
 		</center>
 		<div id="About">
-			<h2>About</h2>
+			<h1>About</h1>
 			<h3>hero name: {{hero.localized_name}}</h3>
 			<h3>primary attraction: {{hero.primary_attr}}</h3>
 			<h3>attack type: {{hero.attack_type}}</h3>
 		</div><br>
 		<div id="heroes">
-			<h2>heroes</h2>
+			<h1>heroes</h1>
 			<h3 id="showName" v-for="h in heroes" :data-id="h.id" @click="viewBio(h)">
 				<img :src="`https://picsum.photos/id/${h.id}/200/200`" alt="">
 				{{h.localized_name}}</h3>
