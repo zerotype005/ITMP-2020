@@ -1,0 +1,23 @@
+#About{
+    background-color: rgb(116, 173, 238);
+    color: red;
+    margin: auto;
+    margin-top: 10px;
+    width: 25%;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+#heroes{
+    background-color: rgb(255, 2, 2);
+    margin: auto;
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+body{
+    background-color: black;
+}
