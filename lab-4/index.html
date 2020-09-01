@@ -22,7 +22,7 @@
 				'--l':l+'%',
 			}"
 				:data-pick="i == pick"
-				@click="check"
+				@click="check(i)"
 				></a-dot>
 			</main>
 		</section>
@@ -53,10 +53,8 @@
 				l:50,//ความสว่างของสีทั่วไปในรอบนี้
 			},
 			methods: {
-				check: function(e){
-					console.log(e)
-					console.log(e.target)
-					console.log(e.target.dataset.pick)
+				check: function(i){
+					console.log(i)
 				}
 			}
 		})
