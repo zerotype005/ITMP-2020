@@ -22,7 +22,7 @@
 				'--l':l+'%',
 			}"
 				:data-pick="i == pick"
-				@click="check(i)"
+				@click="check"
 				></a-dot>
 			</main>
 		</section>
@@ -53,13 +53,20 @@
 				l:50,//ความสว่างของสีทั่วไปในรอบนี้
 			},
 			methods: {
-				check: function(i){
-					console.log(i)
+				check: function(e){
+					console.log(e)
+					//ทำให้เช็คก่อนว่าถูกมั้ย
+				},
+				correct: function(){
+					//เข้าด่านต่อไป
+					this.row = rand(2,6)
+					this.pick = rand(1,6) //แก้ให้ถูก
+					console.log('Correct!')
 				}
 			}
 		})
 		//ทำให้แคนวาสมี --picklight ตามที่กำหนดไว้ข้างบนนี้
-		document.querySelector('#canvas').style.setProperty('--picklight',picklight);
+		document.querySelector('#canvas').style.setProperty('--picklight',picklight);//ก็อปไปใช้อีกทีตอนแรนดอมเข้าด่านใหม่ได้
 		
 		let counter = setInterval(()=>{
 			if (app.time>0) {
