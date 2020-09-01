@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
 	--ci1:#000;
 	--ci2:#666;
@@ -18,3 +19,27 @@
 .round{
 	border-radius: 10px;
 }
+=======
+#app{
+    border: 3px solid black;
+    border-style: solid;
+    margin: auto;
+    background-color: cyan;
+    width: 28%;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.roww{
+    text-shadow: 2px 2px 5px rgb(42, 21, 231);
+    box-shadow:0px 2px 12px black;
+    border-radius: 4px;
+    margin-bottom: .8em;
+    color: black;
+    width: 48%;
+}
+h2{
+    text-shadow: 2px 2px red;
+}
+>>>>>>> 561fc1c77f8ca5dd75152c716b958e81c520f1a2
