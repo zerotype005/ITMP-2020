@@ -15,15 +15,14 @@
 		</section>
 		<section id="canvas_main">
 			<main>
-				<a-dot></a-dot>
-				<a-dot></a-dot>
-				<a-dot></a-dot>
-				<a-dot></a-dot>
-				<a-dot></a-dot>
-				<a-dot style="--l:80%"></a-dot>
-				<a-dot data-pick="true"></a-dot>
-				<a-dot></a-dot>
-				<a-dot></a-dot>
+				<a-dot v-for="i in row*row"
+				:style="{
+				'--row':row,
+				'--h':h,
+				'--l':l+'%',
+			}"
+				:data-pick="i == pick"
+				></a-dot>
 			</main>
 		</section>
 		<section id="canvas_footer">
@@ -34,7 +33,7 @@
 	</div>
 
 	<script>
-		let picklight = "20%" //เลือกว่ารอบนี้ อันพิเศษจะมีความสว่าง 20%
+		let picklight = "80%" //เลือกว่ารอบนี้ อันพิเศษจะมีความสว่าง 20%
 		document.registerElement('a-dot') //ให้ vue รู้จัก a-dot
 
 		function rand(start,stop){//สร้างฟังก์ชัน random ไว้ใช้
@@ -46,11 +45,11 @@
 			el:'#canvas',
 			data:{
 				row:2, //จำนวนแถวที่จะมีในรอบนี้
-				h:330, // hue ในรอบนี้
-				time:10, //เวลาเริ่มต้น
+				h:200, // hue ในรอบนี้
+				time:20, //เวลาเริ่มต้น
 				score:0, //คะแนนเริ่มต้น
 				pick:1, //หมายเลขวงกลมที่จะสีแตกต่างจากก้อนอื่นๆ
-				l:30,//ความสว่างของสีทั่วไปในรอบนี้
+				l:50,//ความสว่างของสีทั่วไปในรอบนี้
 			},
 			methods: {
 
