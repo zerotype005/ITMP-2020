@@ -10,7 +10,7 @@
 	<div id="canvas">
 		<section id="canvas_header">
 			<div>
-				เหลือเวลา 10 วินาที
+				เหลือเวลา {{time}} วินาที
 			</div>
 		</section>
 		<section id="canvas_main">
@@ -20,15 +20,15 @@
 				<a-dot></a-dot>
 				<a-dot></a-dot>
 				<a-dot></a-dot>
-				<a-dot style="--l:20%"></a-dot>
-				<a-dot></a-dot>
+				<a-dot style="--l:80%"></a-dot>
+				<a-dot data-pick="true"></a-dot>
 				<a-dot></a-dot>
 				<a-dot></a-dot>
 			</main>
 		</section>
 		<section id="canvas_footer">
 			<div>
-				0 คะแนน
+				{{score}} คะแนน
 			</div>
 		</section>
 	</div>
@@ -48,13 +48,15 @@
 				row:2, //จำนวนแถวที่จะมีในรอบนี้
 				h:330, // hue ในรอบนี้
 				time:10, //เวลาเริ่มต้น
-				score:0, //คะนนเริ่มต้น
+				score:0, //คะแนนเริ่มต้น
 				pick:1, //หมายเลขวงกลมที่จะสีแตกต่างจากก้อนอื่นๆ
-				l:30,//ความสว่างในรอบนี้
+				l:30,//ความสว่างของสีทั่วไปในรอบนี้
 			},
 			methods: {
+
 			}
 		})
+		//ทำให้แคนวาสมี --picklight ตามที่กำหนดไว้ข้างบนนี้
 		document.querySelector('#canvas').style.setProperty('--picklight',picklight);
 		
 		let counter = setInterval(()=>{
