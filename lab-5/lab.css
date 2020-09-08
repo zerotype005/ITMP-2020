@@ -30,9 +30,11 @@ body{
 	height: 400px;
 	opacity: .2;
 }
+
 #canvas_main[data-play="true"]{
 	opacity: 1;
 }
+
 #canvas_header,
 #canvas_footer{
 	display: flex;
@@ -101,7 +103,7 @@ div.box{
 	border: 3px solid #fffc;
 	transform: scale(.6);
 }
-.box._fruit[data-type="11"]{
+.box._fruit[data-type="red"]{
 	background-color: red;
 }
 

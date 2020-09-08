@@ -10,7 +10,7 @@
 	<div id="canvas">
 		<section id="canvas_header">
 			<div>
-				-- แสดงคะแนน
+				{{score}} คะแนน
 			</div>
 		</section>
 		<section id="canvas_main" 
@@ -21,7 +21,7 @@
 				:data-pst="i"></div>
 				<div class="box _toggle" data-pst="10" data-isrightarrow="1"></div>
 
-				<div class="box _fruit"></div>
+				<div class="box _fruit" :data-pst="f.pst" :data-type="f.type" v-for="f in fruits"></div>
 
 				<div class="box _origin"></div>
 				<div class="box _12" data-pst="12"></div>
@@ -31,10 +31,10 @@
 		</section>
 		<section id="canvas_footer">
 			<div v-if="play" class="btn" id="toggle">
-				Toggle
+				playing
 			</div>
 			<div v-if="!play" class="btn" id="endgame">
-				Ene Game
+				End Game
 			</div>
 		</section>
 	</div>
@@ -45,23 +45,43 @@
 			return Math.floor(Math.random()*100%shift)+start
 		}
 		
-		let fruitCount = 5
+		let nextFruitId = 3
 		let isRightArrow = 1
 		let speed = 1000
 		let app = new Vue({
 			el:'#canvas',
 			data:{
 				play:true,
-				time:0,
+				turn:0,
 				score:0,
 				fruits:[
-					{id:1,type:13,pst:6,run:true,step:1},
-					{id:2,type:11,pst:3,run:true,step:1},
-					{id:3,type:11,pst:2,run:true,step:1},
-					{id:4,type:13,pst:1,run:true,step:1},
+					{id:1,type:'red',pst:4,run:true,step:1},
+					{id:2,type:'yellow',pst:2,run:true,step:1},
 				]
+			},
+			methods:{
+
+			},
+			computed:{
+
+			},
+			watch:{
+				turn: function(x){
+					let count = this.fruits.length
+					for(let f in this.fruits){
+						let run = this.fruits[f].run
+						if (run) {
+							this.fruits[f].pst += 1
+						}
+					}
+					//console.log(x)
+				}
 			}
 		})
+
+		let playing = setInterval(function(){
+			app.turn++
+		},speed)
 	</script>
 </body>
 </html>
