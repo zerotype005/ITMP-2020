@@ -1,33 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>The Members - ITKMITL Multimedia Programming 2563</title>
-
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<link rel="stylesheet" type="text/css" href="lab.css">
 </head>
-
 <body>
 	<div id="app">
-<<<<<<< HEAD
-		About
-		<h3>Username {{person.username}}</h3>
-		<h3>Name {{person.name}}</h3>
-		<h3>email {{person.email}}</h3>
-		<h3>website {{person.website}}</h3>
-		<h3>company {{person.company.name}}</h3>
-
-		<button @click="isthisgood">เขาเป็นสมาชิกกลุ่มที่ดีหรือไม่</button>
-		<h2>{{yesno.answer}}</h2>
-		<img :src="yesno.image" alt="">
-
-		Users
-		<h2 v-for="u in users" :data-id="u.id" @click="viewBio(u)">
-			<img :src="`https://picsum.photos/id/3${u.id}/300/300`" alt="">
-			{{u.username}}
-		</h2>
-=======
 		<center>
 			<img width="180" height="200" src="https://i.pinimg.com/564x/2d/cd/80/2dcd80c6f5a21a437313adde93b373d8.jpg" alt="logo">
 		</center>
@@ -43,21 +22,8 @@
 				<img :src="`https://picsum.photos/id/${h.id}/200/200`" alt="">
 				{{h.localized_name}}</h3>
 		</div>
->>>>>>> 561fc1c77f8ca5dd75152c716b958e81c520f1a2
 	</div>
-
-
 	<script>
-<<<<<<< HEAD
-		fetch('https://jsonplaceholder.typicode.com/users')
-		.then(response => response.json())
-		.then(json => {
-			console.log(json)
-			app.users = json
-			app.person = json[0]
-		})
-		
-=======
 		fetch('https://api.opendota.com/api/heroes')
 			.then(response => response.json())
 			.then(json => {
@@ -65,66 +31,9 @@
 				app.heroes = json
 				app.hero = json[0]
 			})
-
->>>>>>> 561fc1c77f8ca5dd75152c716b958e81c520f1a2
-
 		let app = new Vue({
 			el: '#app',
-			methods: {
-				viewBio: function(user){
-					this.person = user
-					this.yesno.answer = "อยากรู้ คลิกเลย"
-					this.yesno.image = ""
-				},
-				isthisgood: function(){
-					fetch('https://yesno.wtf/api')
-					.then(response => response.json())
-					.then(json => {
-						console.log(json)
-						app.yesno = json
-					})
-				}
-			},
 			data: {
-<<<<<<< HEAD
-				yesno:{
-					"answer":"อยากรู้ คลิกเลย",
-					"forced":false,
-					"image":""
-				},
-				person:{
-					"id": 1,
-					"name": "______",
-					"username": "______",
-					"email": "______",
-					"website": "______",
-					"company": {
-						"name": "______",
-						"catchPhrase": "Multi-layered client-server neural-net",
-						"bs": "harness real-time e-markets"
-					}
-				},
-				users : [{
-					"id": 1,
-					"name": "______",
-					"username": "______",
-					"email": "______",
-					"website": "______",
-					"company": {
-						"name": "______",
-						"catchPhrase": "Multi-layered client-server neural-net",
-						"bs": "harness real-time e-markets"
-					}
-				}]
-			}
-		})
-
-		// function viewBio(h2){
-		// 	let id = h2.dataset.id;
-		// 	app.person = app.users[id-1]
-		// 	console.log(id)
-		// }
-=======
 				heroes: [{			//users
 					"id": 1,
 					"name": "_______",
@@ -150,17 +59,12 @@
 				}
 			}
 		})
-
 		var showName = document.getElementById("showName").value
-
 		function viewBio(showName) {
 			let id = showName.dataset.id
 			app.hero = app.heroes[id - 1]
 			console.log(id)
 		}
-
->>>>>>> 561fc1c77f8ca5dd75152c716b958e81c520f1a2
 	</script>
 </body>
-
 </html>
