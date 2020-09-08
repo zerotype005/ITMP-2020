@@ -98,9 +98,8 @@
 								this.score++
 							}
 							else if ((this.fruits[f].type == 'yellow' && this.fruits[f].pst == 11)||(this.fruits[f].type == 'red' && this.fruits[f].pst == 13)) {
-								this.fruits.run = false
                                 this.play = false
-                                
+                                clearInterval(playing)
 							}
 						}
 					//console.log(x)
