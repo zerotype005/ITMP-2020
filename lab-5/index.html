@@ -19,7 +19,7 @@
 				<div class="box _path" 
 				v-for="i in 14" 
 				:data-pst="i"></div>
-				<div class="box _toggle" data-pst="10" data-isrightarrow="1"></div>
+				<div class="box _toggle" data-pst="10" data-isrightarrow="isRightArrow"></div>
 
 				<div class="box _fruit" :data-pst="f.pst" :data-type="f.type" v-for="f in fruits"></div>
 
@@ -30,8 +30,8 @@
 			</main>
 		</section>
 		<section id="canvas_footer">
-			<div v-if="play" class="btn" id="toggle">
-				playing
+			<div v-if="play" class="btn" id="toggle" @click="check()">
+				toggle
 			</div>
 			<div v-if="!play" class="btn" id="endgame">
 				End Game
@@ -60,7 +60,14 @@
 				]
 			},
 			methods:{
-
+				check: function(e){
+					if (this.isRightArrow == 1){
+						this.isRightArrow = 0
+					}
+					else{
+						this.isRightArrow = 1
+					}
+				}
 			},
 			computed:{
 
@@ -72,6 +79,9 @@
 						let run = this.fruits[f].run
 						if (run) {
 							this.fruits[f].pst += 1
+						}
+						if (this.fruits[f].pst == 12 || this.fruits[f].pst == 16) {
+							this.fruits[f].run = false
 						}
 					}
 					//console.log(x)
