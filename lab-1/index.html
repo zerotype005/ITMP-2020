@@ -2,76 +2,27 @@
 <html>
 <head>
 	<title>Lab - Multimedia Programming 2563 ITKMITL</title>
-	<link rel="stylesheet" type="text/css" href="https://jabont.com/jayss/jayss2.css">
+	<link rel=stylesheet href="../src/reset.css">
 	<link rel=stylesheet href="lab.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
-<body class="">
+<body class="paper">
 	<div id="app">
-<<<<<<< HEAD
-		<!--=== The Section Boxes : main ===-->
-		<section id="main_section" class="padding-xl-vtc">
-			<div class="cont-pd">
-				<theboxes class="top center spacing -clip t-center">
-					<box col="6"><inner class="bg-white padding-l padding-vl-hzt round shadow">
-						<h1 class="b7 h7">✨ มาท่องสูตรคูณกันเถอะ ✨</h1>
-						<sp class=""></sp>
-						<theboxes class="top spacing-l -clip">
-							<box col="6"><inner class="">
-								<h4 class="cl-bluegrey-6">ตัวคูณ</h4>
-								<sp class="s"></sp>
-								<input type="number" v-model="n" class="wide t-center size-l">
-								<sp class="l"></sp>
-								<h4 class="cl-bluegrey-6">จำนวนแถว</h4>
-								<sp class="s"></sp>
-								<input type="number" v-model="row" class="wide t-center size-l">
-								<sp class="l"></sp>
-								<h4>แม่ก่อนหน้านี้คือ แม่ {{before_n}}</h4>
-							</inner></box>
-							<box col="6"><inner class="">
-								<h2 class="t-left cl-bluegrey-6">สูตรคูณแม่ {{n}}</h2>
-								<sp class=""></sp>
-								<h3 class="h9 t-left"
-								v-for="i in r"
-								>{{n}} x {{i}} = {{x(i)}}</h3>
-							</inner></box>
-						</theboxes>
-					</inner></box>
-				</theboxes>
-
-				<sp class="l"></sp>
-				<h4 class="t-center">by Jabont on <a href="https://github.com/Jabont/ITMP-2020">GitHub</a></h4>
-			</div>
-		</section>
-=======
 		<input type="number" v-model="n">
 		<input type="number" v-model="row">
 		<div class="space"></div>
 		<h2>สูตรคูณแม่ {{n}}</h2>
 		<h5>กลับไปที่แม่ -> {{before_n}}</h5>
-			<h4 class="roww" v-for="i in r"
+		<h4 class="roww" v-for="i in r"
 				>{{n}} x {{i}} = {{multiply(i)}}</h4>
 			<h3 class="total"> ผลรวม {{sum(row)}}</h3>
-		
 
->>>>>>> 561fc1c77f8ca5dd75152c716b958e81c520f1a2
 	</div>
-
 	<script>
 		let app = new Vue({
 			el: '#app',
 			data: {
 				n: 2,
-<<<<<<< HEAD
-				before_n:1,
-				row:12
-			},
-			methods: {
-				x: function(row){
-					return this.n*row
-				}
-			},
-=======
 				before_n: 1,
 				row: 12
 			},
@@ -88,7 +39,6 @@
 				}
 				
 			},	
->>>>>>> 561fc1c77f8ca5dd75152c716b958e81c520f1a2
 			computed: {
 				r: function(){
 					return parseInt(this.row)
