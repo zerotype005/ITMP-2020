@@ -80,9 +80,13 @@ div.box{
 
 .box._12{
 	background-color: red;
+	background-image: url('M416.png');
+	background-size: 90%;
 }
 .box._16{
 	background-color: yellow;
+	background-image: url('M24.png');
+	background-size: 90%;
 }
 .box._path{
 	background-color: black;
@@ -98,13 +102,15 @@ div.box{
 	transform: rotate(90deg);
 }
 .box._fruit{
-	background-color: yellow;
+	background-image: url('762mm.png');
+	background-size: 90%;
 	border-radius: 100%;
 	border: 3px solid #fffc;
 	transform: scale(.6);
 }
 .box._fruit[data-type="red"]{
-	background-color: red;
+	background-image: url('556mm.png');
+	background-size: 90%;
 }
 
 .box[data-pst="0"]{
