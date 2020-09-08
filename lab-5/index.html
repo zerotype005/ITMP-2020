@@ -19,9 +19,9 @@
 				<div class="box _path" 
 				v-for="i in 14" 
 				:data-pst="i"></div>
-				<div class="box _toggle" data-pst="10" data-isrightarrow="isRightArrow"></div>
+				<div class="box _toggle" data-pst="10" :data-isrightarrow="isRightArrow"></div>
 
-				<div class="box _fruit" :data-pst="f.pst" :data-type="f.type" v-for="f in fruits"></div>
+				<div class="box _fruit" v-for="f in fruits" :data-pst="f.pst" :data-type="f.type"></div>
 
 				<div class="box _origin"></div>
 				<div class="box _12" data-pst="12"></div>
@@ -51,6 +51,7 @@
 		let app = new Vue({
 			el:'#canvas',
 			data:{
+				isRightArrow: isRightArrow,
 				play:true,
 				turn:0,
 				score:0,
@@ -60,13 +61,14 @@
 				]
 			},
 			methods:{
-				check: function(e){
+				check: function(){
 					if (this.isRightArrow == 1){
 						this.isRightArrow = 0
 					}
 					else{
 						this.isRightArrow = 1
 					}
+					console.log(this.isRightArrow)
 				}
 			},
 			computed:{
@@ -78,14 +80,45 @@
 					for(let f in this.fruits){
 						let run = this.fruits[f].run
 						if (run) {
-							this.fruits[f].pst += 1
+							this.fruits[f].pst += this.fruits[f].step
+						}
+						if (this.fruits[f].pst == 10 && this.isRightArrow == 1){
+							this.fruits[f].step = 3
 						}
 						if (this.fruits[f].pst == 12 || this.fruits[f].pst == 16) {
-							this.fruits[f].run = false
+							this.fruits[f].run = false  //หยุดวิ่ง
 						}
-					}
+
+						//นับ score
+						if ((this.fruits[f].pst == 11 || this.fruits[f].pst == 13) && this.fruits[f].run == true) {
+							if (this.fruits[f].type == 'red' && this.fruits[f].pst == 11){
+								this.score++
+							}
+							else if (this.fruits[f].type == 'yellow' && this.fruits[f].pst == 13){
+								this.score++
+							}
+							else if ((this.fruits[f].type == 'yellow' && this.fruits[f].pst == 11)||(this.fruits[f].type == 'red' && this.fruits[f].pst == 13)) {
+								this.fruits.run = false
+                                this.play = false
+                                
+							}
+						}
 					//console.log(x)
+					}
+					let spawn = rand(0,1)
+					if(spawn == 1){
+						newfruit = rand(0,1)
+						newfruitId = 3
+						if(newfruit == 1){
+							this.fruits.push({id:newfruitId,type:'red',pst:1,run:true,step:1})
+						}else{
+							this.fruits.push({id:newfruitId,type:'yellow',pst:1,run:true,step:1})
+						}
+						newfruitId++;
+					}
+				
 				}
+
 			}
 		})
 
